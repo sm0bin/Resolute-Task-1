@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 
-// const googleProvider = new GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
@@ -26,10 +26,10 @@ const AuthProvider = ({ children }) => {
         return signOut(auth);
     }
 
-    // const googleSignIn = () => {
-    //     setLoading(true);
-    //     return signInWithPopup(auth, googleProvider);
-    // }
+    const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
+    }
 
     // const updateUser = (name, imgUrl) => {
     //     setLoading(true);
@@ -73,7 +73,7 @@ const AuthProvider = ({ children }) => {
         signUp,
         login,
         logout,
-        // googleSignIn,
+        googleSignIn,
         // updateUser,
         loading,
     };
