@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
                     email: currentUser.email,
                 };
 
-                console.log(userInfo);
+                // console.log(userInfo);
                 axiosPublic.post("/users/create-jwt", userInfo)
                     .then(res => {
                         // console.log(res.data.token);

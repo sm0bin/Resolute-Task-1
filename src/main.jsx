@@ -12,6 +12,12 @@ import ErrorPage from "./components/ErrorPage";
 import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Hero from "./components/home/Hero";
+import Profile from "./components/shared/Profile";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -22,15 +28,18 @@ const router = createBrowserRouter([
       { path: "/", element: <Hero /> },
       { path: "/login", element: <Login /> },
       { path: "/signup", element: <SignUp /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <Toaster />
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <Toaster />
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

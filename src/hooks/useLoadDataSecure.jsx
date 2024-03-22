@@ -4,7 +4,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const useLoadDataSecure = (url, key) => {
     const axiosSecure = useAxiosSecure();
 
-    const { data, isPending, error, refetch } = useQuery({
+    const { data, isPending, refetch, error } = useQuery({
         queryKey: [key],
         queryFn: async () => {
             const res = await axiosSecure(url)
