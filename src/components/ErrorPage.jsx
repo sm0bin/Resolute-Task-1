@@ -14,6 +14,8 @@ export default function ErrorPage() {
                     <i>{error.statusText || error.message}</i>
                 </h4>
             </div>
+
+            {/* buttons */}
             <div className="flex gap-2">
                 <button onClick={() => window.location.reload(true)} className="btn btn-neutral">
                     Reload

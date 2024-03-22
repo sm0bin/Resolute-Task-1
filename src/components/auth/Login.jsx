@@ -82,7 +82,7 @@ const Login = () => {
                 </div>
             </form>
             <div className="text-sm mt-4 font-medium">
-                Not registered? <Link to="/signup" className="link link-info">Create Account</Link>
+                Not registered? <Link to="/signup" className="link link-info link-hover">Sign Up</Link>
             </div>
         </div>
     );

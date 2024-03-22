@@ -38,7 +38,6 @@ const SignUp = () => {
         setBtnLoading(true);
 
         const form = e.target;
-        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -101,12 +100,6 @@ const SignUp = () => {
             <form onSubmit={handleSubmit} className="card-body p-0">
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Full Name</span>
-                    </label>
-                    <input type="text" name="name" placeholder="name" className="input input-bordered" required />
-                </div>
-                <div className="form-control">
-                    <label className="label">
                         <span className="label-text">Email</span>
                     </label>
                     <input type="email" name="email" placeholder="email" className="input input-bordered" required />
@@ -133,7 +126,7 @@ const SignUp = () => {
                 </div>
             </form>
             <div className="text-sm mt-4 font-medium ">
-                Have an Account? <Link to="/login" className="link link-info">Login</Link>
+                Have an Account? <Link to="/login" className="link link-info link-hover">Login</Link>
             </div>
         </div>
     );

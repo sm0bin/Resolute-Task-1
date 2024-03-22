@@ -47,11 +47,10 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 const userInfo = {
                     email: currentUser.email,
-                    role: "tourist"
                 };
 
                 console.log(userInfo);
-                axiosPublic.post("/jwt", userInfo)
+                axiosPublic.post("/users/create-jwt", userInfo)
                     .then(res => {
                         // console.log(res.data.token);
                         if (res.data.token) {
